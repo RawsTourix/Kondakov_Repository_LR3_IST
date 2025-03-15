@@ -112,7 +112,13 @@ void enter_string(string& varLink, bool& escapeLink, string label) {
 // Вычисление объёма параллелепипеда
 function<void()> v_parallelepiped() {
     return []() {
-        // разрабатывает Иван И.И. — ветка branch_fun_1
+        float a, b, c;
+        bool escape = false;
+        cout << "Объём параллелепипеда вычисляется по формуле V = abc:" << endl << endl;
+        enter_float(a, escape, "a = "); if (escape) return;
+        enter_float(b, escape, "b = "); if (escape) return;
+        enter_float(c, escape, "c = "); if (escape) return;
+        cout << endl << "V = " << a << " * " << b << " * " << c << " = " << a * b * c;
     };
 }
 
