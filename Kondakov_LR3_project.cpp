@@ -220,7 +220,16 @@ function<void()> fractional_part_of_sum_3() {
 // Округлить до ближайшего целого сумму 3-х чисел
 function<void()> round_sum_3() {
     return []() {
-        // разрабатывает Алина А.А. — ветка branch_fun_7
+        float a, b, c;
+        bool escape = false;
+        cout << "Введите 3 вещественных числа, сумму которых надо округлить до ближайшего целого:" << endl << endl;
+        enter_float(a, escape, "a = ", -2147483647); if (escape) return;
+        enter_float(b, escape, "b = ", -2147483647); if (escape) return;
+        enter_float(c, escape, "c = ", -2147483647); if (escape) return;
+        float sum = a + b + c;
+        float fraction = find_fraction(sum);
+        int res = sum + (-fraction + (fraction < 0.5 ? 0 : 1)) * (sum < 0 ? -1 : 1);
+        cout << "Округлённая до ближайшего целого сумма чисел (" << a << ", " << b << ", " << c << "): " << res << ".";
     };
 }
 
