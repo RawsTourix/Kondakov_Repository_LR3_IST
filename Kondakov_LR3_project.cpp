@@ -207,7 +207,13 @@ float find_fraction(float f) {
 // Найти дробную часть суммы 3-х чисел
 function<void()> fractional_part_of_sum_3() {
     return []() {
-        // разрабатывает Сергей С.С. — ветка branch_fun_6
+        float a, b, c;
+        bool escape = false;
+        cout << "Введите 3 вещественных числа, дробную часть суммы которых надо найти:" << endl << endl;
+        enter_float(a, escape, "a = ", -2147483647); if (escape) return;
+        enter_float(b, escape, "b = ", -2147483647); if (escape) return;
+        enter_float(c, escape, "c = ", -2147483647); if (escape) return;
+        cout << "Дробная часть суммы чисел (" << a << ", " << b << ", " << c << "): " << find_fraction(a + b + c) << ".";
     };
 }
 
