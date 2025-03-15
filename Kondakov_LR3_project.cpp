@@ -175,7 +175,26 @@ function<void()> triangle_exists() {
 // Текстовая трансляция цифры
 function<void()> itos() {
     return []() {
-        // разрабатывает Михаил М.М. — ветка branch_fun_5
+        int a;
+        bool escape = false;
+        cout << "Введите целое число для трансляции его в текст:" << endl << endl;
+        enter_number(a, escape, "a = ", 0, 9); if (escape) return;
+        string str_a;
+        switch (a) {
+            case 0: str_a = "ноль"; break;
+            case 1: str_a = "один"; break;
+            case 2: str_a = "два"; break;
+            case 3: str_a = "три"; break;
+            case 4: str_a = "четыре"; break;
+            case 5: str_a = "пять"; break;
+            case 6: str_a = "шесть"; break;
+            case 7: str_a = "семь"; break;
+            case 8: str_a = "восемь"; break;
+            case 9: str_a = "девять"; break;
+        default:
+            cout << "Невозможно обработать значение '" << a << "'."; return;
+        }
+        cout << endl << "Текстовая версия числа: \"" << str_a << "\".";
     };
 }
 
