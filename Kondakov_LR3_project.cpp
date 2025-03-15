@@ -125,7 +125,16 @@ function<void()> v_parallelepiped() {
 // Произведение цифр четырёхзначного числа
 function<void()> quad_nums_product() {
     return []() {
-        // разрабатывает Пётр П.П. — ветка branch_fun_2
+        int a;
+        bool escape;
+        cout << "Введите целое число, произведение цифр которого нужно найти:" << endl << endl;
+        enter_number(a, escape, "a = ");
+        string str_a = to_string(a);
+        int mult = 1;
+        for (const char& i : str_a) {
+            mult *= i - '0';
+        }
+        cout << endl << "Произведение цифр числа: " << mult << ".";
     };
 }
 
