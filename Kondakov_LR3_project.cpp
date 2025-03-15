@@ -141,7 +141,17 @@ function<void()> quad_nums_product() {
 // Наибольшее из трёх чисел
 function<void()> max_of_3() {
     return []() {
-        // разрабатывает Сидор С.С. — ветка branch_fun_3
+        int a, b, c;
+        bool escape = false;
+        cout << "Введите 3 целых числа, максимальное из которых нужно найти:" << endl << endl;
+        enter_number(a, escape, "a = "); if (escape) return;
+        enter_number(b, escape, "b = "); if (escape) return;
+        enter_number(c, escape, "c = "); if (escape) return;
+        cout << endl;
+        if ((a == b) && (a == c) && (b == c))
+            cout << "Введённые числа равны.";
+        else
+            cout << "Наибольшее число: " << ((a >= b) && (a >= c) ? a : (b >= a) && (b >= c) ? b : c);
     };
 }
 
