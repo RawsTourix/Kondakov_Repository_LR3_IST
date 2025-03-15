@@ -158,7 +158,17 @@ function<void()> max_of_3() {
 // Существование треугольника
 function<void()> triangle_exists() {
     return []() {
-        // разрабатывает Олег О.О. — ветка branch_fun_4
+        float a, b, c;
+        bool escape = false;
+        cout << "Введите 3 значения сторон треугольника:" << endl << endl;
+        enter_float(a, escape, "a = "); if (escape) return;
+        enter_float(b, escape, "b = "); if (escape) return;
+        enter_float(c, escape, "c = "); if (escape) return;
+        cout << endl;
+        if ((a + b > c) && (a + c > b) && (b + c > a))
+            cout << "Треугольник существует.";
+        else
+            cout << "Треугольник не существует.";
     };
 }
 
